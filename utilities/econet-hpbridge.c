@@ -6105,7 +6105,7 @@ int eb_readconfig(char *f)
 
 				net = atoi(eb_getstring(line, &matches[1]));	
 				period = atof(eb_getstring(line, &matches[2]));
-				mark = atoi(eb_getstring(line, &matches[4]));
+				mark = atoi(eb_getstring(line, &matches[5]));
 
 				if (period > 15.5 || period < 3)
 					eb_debug (1, 0, "CONFIG", "Bad network clock period in line %s", line);
