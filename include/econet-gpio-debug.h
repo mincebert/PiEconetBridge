@@ -4,7 +4,7 @@
 
 /* GPIO setup / release debug */
 
-//#define ECONET_GPIO_DEBUG_SETUP 1
+#define ECONET_GPIO_DEBUG_SETUP 1
 
 /* Read/write Bus debug */
 
