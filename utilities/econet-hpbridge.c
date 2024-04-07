@@ -6097,7 +6097,7 @@ int eb_readconfig(char *f)
 					search->next = entry; // Put on tail
 
 			}
-			else if (!regexec(&r_netclock, line, 5, matches, 0))
+			else if (!regexec(&r_netclock, line, 6, matches, 0))
 			{
 				double	period;
 				int	mark;
