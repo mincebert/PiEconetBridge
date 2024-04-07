@@ -6119,7 +6119,7 @@ int eb_readconfig(char *f)
 				if (networks[net]->type != EB_DEF_WIRE)
 					eb_debug (1, 0, "CONFIG", "Cannot set network clock on net %d - not defined as Econet", net);
 
-				fprintf (stderr, "Configuring net %d with period %f (%f) and mark %d (%d - '%s')\n", net, period, (period * 4), mark, (mark * 4), eb_getstring(line, &matches[3]));
+				//fprintf (stderr, "Configuring net %d with period %f (%f) and mark %d (%d - '%s')\n", net, period, (period * 4), mark, (mark * 4), eb_getstring(line, &matches[3]));
 				networks[net]->wire.period = period * 4;
 				networks[net]->wire.mark = mark * 4;
 					
