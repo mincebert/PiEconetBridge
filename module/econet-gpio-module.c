@@ -2352,7 +2352,7 @@ void econet_set_pwm(uint8_t period, uint8_t mark)
 		writel(	(readl(GPIO_PWM + PWM_CTL) & ~(0xff)) | (PWM_CTL_MSEN1 | PWM_CTL_PWEN1),
 			(GPIO_PWM + PWM_CTL)	);
 #ifdef ECONET_GPIO_DEBUG_SETUP
-		printk (KERN_INFO "ECONET-GPIO: PWM Clock period/mark set to %d, %d (%.1f, %.1f us)\n", period, mark, (float) period / 4, (float) mark / 4);
+		printk (KERN_INFO "ECONET-GPIO: PWM Clock period/mark set to %d, %d (/4 us)\n", period, mark);
 #endif
 	}
 
