@@ -6105,7 +6105,6 @@ int eb_readconfig(char *f)
 
 				net = atoi(eb_getstring(line, &matches[1]));	
 				period = atof(eb_getstring(line, &matches[2]));
-				fprintf(stderr, "Mark = <%s>", eb_getstring(line, &matches[5]));
 				mark = atoi(eb_getstring(line, &matches[5]));
 
 				if (period > 15.5 || period < 3)
@@ -6123,7 +6122,7 @@ int eb_readconfig(char *f)
 				//fprintf (stderr, "Configuring net %d with period %f (%f) and mark %d (%d - '%s')\n", net, period, (period * 4), mark, (mark * 4), eb_getstring(line, &matches[3]));
 				networks[net]->wire.period = period * 4;
 				networks[net]->wire.mark = mark * 4;
-					
+
 			}
 			else if (!regexec(&r_bindto, line, 2, matches, 0))
 			{
