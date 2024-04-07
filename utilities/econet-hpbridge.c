@@ -6105,6 +6105,7 @@ int eb_readconfig(char *f)
 
 				net = atoi(eb_getstring(line, &matches[1]));	
 				period = atof(eb_getstring(line, &matches[2]));
+				fprintf(stderr, "Mark = <%s>", eb_getstring(line, &matches[5]));
 				mark = atoi(eb_getstring(line, &matches[5]));
 
 				if (period > 15.5 || period < 3)
