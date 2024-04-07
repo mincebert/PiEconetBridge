@@ -2320,7 +2320,7 @@ void econet_led_state(uint8_t arg)
 
 void econet_set_pwm(uint8_t period, uint8_t mark)
 {
-	// constraint period and mark ranges
+	// constrain period and mark ranges
 	period &= 0x3f;
 	mark &= 0x0f;
 
@@ -2352,7 +2352,7 @@ void econet_set_pwm(uint8_t period, uint8_t mark)
 		writel(	(readl(GPIO_PWM + PWM_CTL) & ~(0xff)) | (PWM_CTL_MSEN1 | PWM_CTL_PWEN1),
 			(GPIO_PWM + PWM_CTL)	);
 #ifdef ECONET_GPIO_DEBUG_SETUP
-		printk (KERN_INFO "ECONET-GPIO: PWM Clock period/mark set to %d, %d (/4 us)\n", period, mark);
+		printk (KERN_INFO "ECONET-GPIO: PWM Clock period/mark set to %d, %d\n", period, mark);
 #endif
 	}
 
