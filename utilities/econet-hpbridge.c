@@ -2993,7 +2993,7 @@ static void * eb_device_despatcher (void * device)
 			if (d->wire.period) // Clock speed to set
 			{
 				ioctl(d->wire.socket, ECONETGPIO_IOC_NETCLOCK, (d->wire.period << 16) | d->wire.mark);
-				eb_debug (0, 2, "DESPATCH", "%-8s %3d     Network clock configured", "Wire", d->net);
+				eb_debug (0, 2, "DESPATCH", "%-8s %3d     Network clock configured %d period, %d mark", "Wire", d->net, d->wire.period, d->wire.mark);
 			}
 
 			eb_debug (0, 2, "DESPATCH", "%-8s %3d     Econet device %s opened successfully (fd %d)", "Wire", d->net, (EB_CONFIG_LOCAL ? "/dev/null" : d->wire.device), d->wire.socket);	
