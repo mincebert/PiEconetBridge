@@ -2344,7 +2344,7 @@ void econet_set_pwm(uint8_t period, uint8_t mark)
 
 	// Enable the PWM
 
-	if ((period & 0x1f) > (mark & 0x0f)) // If resulting mark is < resulting period, don't bother enabling the PWM because it'll be nonsense
+	if ((period & 0x3f) > (mark & 0x0f)) // If resulting mark is < resulting period, don't bother enabling the PWM because it'll be nonsense
 	{
 		writel(	(readl(GPIO_PWM + PWM_CTL) & ~(0xff)) | (PWM_CTL_MSEN1 | PWM_CTL_PWEN1),
 			(GPIO_PWM + PWM_CTL)	);
